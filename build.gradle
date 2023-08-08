@@ -15,6 +15,7 @@ targetCompatibility = 1.8
 ext {
     slf4jVersion = '1.7.7'
     serenityCoreVersion = '3.9.4'
+    serenityCucumberVersion = '3.3.4'
     junitVersion = '5.9.2'
     assertJVersion = '3.23.1'
     lombokVersion = '1.18.24'
