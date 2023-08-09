@@ -56,7 +56,7 @@ public class LoginStepDefinitions {
                 ),
                 seeThat("The welcome message should be ",
                         QuestionData.welcomeMessage(),
-                        equalTo("Welcome to your account. Here you can manage all of your personal information and orders")
+                        equalTo("Welcome to your account. Here you can manage all of your personal information and orders.")
                 ),
                 seeThat("The title should be ",
                         QuestionData.title(),
