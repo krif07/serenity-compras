@@ -52,12 +52,17 @@ public class LoginStepDefinitions {
                 ),
                 seeThat("The title should be ",
                         QuestionData.title(),
-                        equalTo("My account"))
+                        equalTo("My account")
+                ),
+                seeThat("The welcome message should be ",
+                        QuestionData.welcomeMessage(),
+                        equalTo("Welcome to your account. Here you can manage all of your personal information and orders")
+                ),
+                seeThat("The title should be ",
+                        QuestionData.title(),
+                        equalTo("My account")
+                )
         );
-
-        System.out.printf("********** Welcome message: %s\n", WelcomeMessage.value().answeredBy(theActorInTheSpotlight()));
-        System.out.printf("********** Question Data - welcome message: %s\n", QuestionData.welcomeMessage());
-        System.out.printf("********** Question Data - title: %s\n", QuestionData.title());
     }
 
 }
