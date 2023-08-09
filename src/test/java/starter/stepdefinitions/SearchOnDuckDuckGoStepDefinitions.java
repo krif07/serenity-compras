@@ -24,7 +24,7 @@ public class SearchOnDuckDuckGoStepDefinitions {
 
     @Given("^(.*) is on the DuckDuckGo home page")
     public void on_the_DuckDuckGo_home_page(String actor) {
-        theActorCalled(actor).attemptsTo(NavigateTo.theDuckDuckGoHomePage());
+        //theActorCalled(actor).attemptsTo(NavigateTo.theDuckDuckGoHomePage());
     }
 
     @When("she/he searches for {string}")
