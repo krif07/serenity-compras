@@ -4,15 +4,21 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import starter.login.DoLogin;
-import starter.login.LoginPage;
-import starter.navigation.NavigateTo;
 
+import org.hamcrest.CoreMatchers;
+import starter.dashboard.QuestionData;
+import starter.dashboard.WelcomeMessage;
+import starter.login.DoLogin;
+import starter.navigation.NavigateTo;
+import starter.search.SearchResult;
+
+import static org.hamcrest.CoreMatchers.everyItem;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LoginStepDefinitions {
 
@@ -38,8 +44,20 @@ public class LoginStepDefinitions {
     }
     @Then("he should have access to manage his account")
     public void he_should_have_access_to_manage_his_account() {
-        // Write code here that turns the phrase above into concrete actions
 
+        theActorInTheSpotlight().should(
+                seeThat("The welcome message should be ",
+                        QuestionData.welcomeMessage(),
+                        equalTo("Welcome to your account. Here you can manage all of your personal information and orders.")
+                ),
+                seeThat("The title should be ",
+                        QuestionData.title(),
+                        equalTo("My account"))
+        );
+
+        System.out.printf("********** Welcome message: %s\n", WelcomeMessage.value().answeredBy(theActorInTheSpotlight()));
+        System.out.printf("********** Question Data - welcome message: %s\n", QuestionData.welcomeMessage());
+        System.out.printf("********** Question Data - title: %s\n", QuestionData.title());
     }
 
 }
