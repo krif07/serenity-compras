@@ -4,17 +4,15 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-import org.hamcrest.CoreMatchers;
-import starter.dashboard.QuestionData;
-import starter.dashboard.WelcomeMessage;
-import starter.login.DoLogin;
-import starter.navigation.NavigateTo;
-import starter.search.SearchResult;
+import starter.ui.myaccount.MyAccountForm;
+import starter.questions.QuestionData;
+import starter.tasks.login.DoLogin;
+import starter.tasks.navigation.NavigateTo;
 
-import static org.hamcrest.CoreMatchers.everyItem;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -62,6 +60,9 @@ public class LoginStepDefinitions {
                         QuestionData.title(),
                         equalTo("My account")
                 )
+        );
+        theActorInTheSpotlight().attemptsTo(
+                Click.on(MyAccountForm.LEFT_MENU.ADD_ADDRESS)
         );
     }
 

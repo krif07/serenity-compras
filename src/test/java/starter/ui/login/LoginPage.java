@@ -1,4 +1,4 @@
-package starter.login;
+package starter.ui.login;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;

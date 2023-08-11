@@ -1,8 +1,9 @@
-package starter.dashboard;
+package starter.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import starter.ui.myaccount.MyAccountForm;
 
 public class WelcomeMessage implements Question<String> {
 
