@@ -2,7 +2,7 @@ Feature: Login into the application myStore
 
   Scenario: Successful login
     Given Krif is on the login page
-    When he sends their valid credentials
+    When he sends his valid credentials using builder
     Then he should have access to manage his account
 
   Scenario: Remember things

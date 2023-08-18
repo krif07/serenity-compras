@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import starter.builder.Login;
 import starter.ui.myaccount.MyAccountForm;
 import starter.questions.QuestionData;
 import starter.tasks.login.DoLogin;
@@ -40,6 +41,20 @@ public class LoginStepDefinitions {
                 DoLogin.withCredentials("krif07@gmail.com", "backtira1")
         );
     }
+
+    @When("he sends his valid credentials using builder")
+    public void he_sends_his_valid_credentials_using_builder() {
+        theActorCalled(this.name).attemptsTo(
+                Login
+                        .with()
+                        .username("krif07@gmail.com")
+                        .and()
+                        .password("backtira1")
+                        .and()
+                        .doLogin()
+        );
+    }
+
     @Then("he should have access to manage his account")
     public void he_should_have_access_to_manage_his_account() {
 
