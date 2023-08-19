@@ -5,6 +5,7 @@ Feature: Login into the application myStore
     When he sends his valid credentials using builder
     Then he should have access to manage his account
 
+  @onlyThis
   Scenario: Remember things
     Given Pepito wants to remember something
     When he tries to remember Foo
